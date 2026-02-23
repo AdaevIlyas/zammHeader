@@ -1,0 +1,11 @@
+// все шрифты добавляются сюда
+// mixin: font-face берёт формат woff2
+// mixin: font-face-format последним значением нужно указать формат шрифта
+
+@include font-face-format("Manrope", "/Manrope-ExtraLight", 200, normal, ttf);
+@include font-face-format("Manrope", "/Manrope-Light", 300, normal, ttf);
+@include font-face-format("Manrope", "/Manrope-Regular", 400, normal, ttf);
+@include font-face-format("Manrope", "/Manrope-Medium", 500, normal, ttf);
+@include font-face-format("Manrope", "/Manrope-SemiBold", 600, normal, ttf);
+@include font-face-format("Manrope", "/Manrope-Bold", 700, normal, ttf);
+@include font-face-format("Manrope", "/Manrope-ExtraBold", 800, normal, ttf);
