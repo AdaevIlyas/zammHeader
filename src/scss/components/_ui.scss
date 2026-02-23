@@ -158,23 +158,15 @@
   }
 }
 
-.shadow-decoration-hover {
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 4px;
+.link-yellow {
   transition: all 0.15s ease;
 
   &:hover {
-    text-shadow: 0 0 0;
-    text-decoration-color: inherit;
+    color: var(--color-text-accent-hover);
   }
-}
 
-.shadow-hover {
-  transition: all 0.15s ease;
-
-  &:hover {
-    text-shadow: 0 0 0;
+  &:active {
+    color: var(--color-text-accent-pressed);
   }
 }
 
@@ -183,7 +175,8 @@
   align-items: center;
   gap: 4px;
 
-  img {
+  img,
+  svg {
     width: 24px;
     height: 24px;
     object-fit: contain;
@@ -198,5 +191,327 @@
     color: var(--color-text-primary);
 
     white-space: nowrap;
+  }
+}
+
+.link-and-icons-hover-yellow {
+  transition: all 0.15s ease;
+
+  * {
+    transition: inherit;
+  }
+
+  &:hover {
+    span {
+      color: var(--color-text-accent-hover);
+    }
+
+    svg {
+      path {
+        fill: var(--color-text-accent-hover);
+      }
+    }
+  }
+
+  &:focus:not(:active) {
+    outline: 1px solid var(--color-border-secondary);
+
+    outline-offset: -1px;
+  }
+
+  &:active {
+    span {
+      color: var(--color-text-accent-pressed);
+    }
+
+    svg {
+      path {
+        fill: var(--color-text-accent-pressed);
+      }
+    }
+  }
+}
+
+.yellow-btn {
+  background: var(--color-surface-accent);
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: var(--color-surface-accent-hover);
+  }
+
+  &:focus:not(:active) {
+    outline: 2px solid var(--color-border-secondary);
+
+    outline-offset: -2px;
+  }
+
+  &:active {
+    background: var(--color-surface-accent-pressed);
+  }
+
+  &:disabled {
+    background: var(--color-surface-accent-disabled);
+
+    * {
+      opacity: 0.3;
+    }
+  }
+}
+
+.ui-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+
+    .ui-radio__label {
+      color: var(--color-text-disabled);
+    }
+
+    .ui-radio__mask {
+      border-color: var(--color-border-disabled);
+    }
+  }
+
+  &:hover {
+    .ui-radio__label {
+      color: var(--color-text-accent-hover);
+    }
+
+    .ui-radio__mask {
+      border-color: var(--color-border-accent-hover);
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__mask {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 100%;
+    border: 1px solid var(--color-border-primary);
+
+    transition: all 0.15s ease;
+  }
+
+  &__input:checked + &__mask {
+    border: 5px solid var(--color-border-accent);
+  }
+
+  &__label {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--color-text-primary);
+
+    transition: all 0.15s ease;
+  }
+}
+
+.ui-input {
+  position: relative;
+
+  height: auto;
+  width: 100%;
+
+  &:hover,
+  &:focus,
+  &:active {
+    .ui-input__field {
+      border-color: var(--color-border-accent-hover);
+    }
+  }
+
+  &.success,
+  &.show-text {
+    .ui-input__placeholder {
+      top: 3px;
+      transform: translateY(0);
+
+      font-size: 12px;
+    }
+  }
+
+  &.focus {
+    .ui-input__placeholder {
+      top: 3px;
+      transform: translateY(0);
+
+      font-size: 12px;
+    }
+  }
+
+  &.error {
+    .ui-input__field {
+      border-color: var(--color-text-attention);
+    }
+
+    .ui-input__placeholder {
+      color: var(--color-text-attention);
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--color-text-tertiary);
+
+    cursor: text;
+
+    transition: all 0.15s ease;
+  }
+
+  &__field {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--color-text-primary);
+
+    width: 100%;
+
+    height: 44px;
+
+    padding: 20px 12px 6px;
+
+    border-radius: 8px;
+    border: 1px solid var(--color-border-secondary);
+    outline: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: var(--color-border-accent-hover);
+    }
+
+    transition: all 0.15s ease;
+  }
+}
+
+.ui-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  &.error {
+    .ui-checkbox__mask {
+      border-color: var(--color-text-attention);
+    }
+
+    .ui-checkbox__label {
+      color: var(--color-text-attention);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+
+    .ui-checkbox__label {
+      color: var(--color-text-disabled);
+    }
+
+    .ui-checkbox__mask {
+      border-color: var(--color-border-disabled);
+    }
+  }
+
+  &:hover {
+    .ui-checkbox__mask {
+      border-color: var(--color-border-accent-hover);
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__mask {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 4px;
+    border: 1px solid var(--color-border-primary);
+
+    margin-bottom: auto;
+
+    transition: all 0.15s ease;
+  }
+
+  &__mask-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 11px;
+    height: 9px;
+
+    object-fit: contain;
+    object-position: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.15s ease;
+  }
+
+  &__input:checked + &__mask {
+    background: var(--color-border-accent);
+    border-color: var(--color-border-accent);
+
+    .ui-checkbox__mask-icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__label {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--color-text-primary);
+
+    user-select: none;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      transition: all 0.15s ease;
+
+      &:hover {
+        color: var(--color-text-accent-hover);
+      }
+
+      &:active {
+        color: var(--color-text-accent-pressed);
+      }
+    }
   }
 }

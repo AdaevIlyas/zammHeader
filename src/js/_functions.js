@@ -28,11 +28,11 @@
 // enable_scroll();
 
 // добавление маски на телефон
-// import phone_mask from "./functions/phone_mask";
-// phone_mask();
+import phone_mask from "./functions/phone_mask";
+phone_mask();
 
 // функция для добавления ограничения символов
-// import character_restriction from "./functions/character_restriction";
+import character_restriction from "./functions/character_restriction";
 // добавлять атрибуты на поля
 // data-ru-field - русские символы
 // data-num-field - цифры

@@ -2,11 +2,13 @@
     <div class="header__wrapper">
         <div class="header__head">
             <div class="header__head-left">
-                <button class="btn-reset shadow-hover header__address">
-                    <div class=" header__address-icon-wrapper">
-                        <img src="/img/address.svg" alt="" class="header__address-icon">
-                    </div>
-                    <span class="header__address-text">Москва</span>
+                <button class="btn-reset header__address link-and-icons link-and-icons-hover-yellow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 3C14.1217 3 16.1569 3.81344 17.6572 5.26172C19.1575 6.70998 20 8.67453 20 10.7227C20 14.4244 15.865 18.4582 13.541 20.4326C13.1169 20.798 12.5684 21 12 21C11.4316 21 10.8831 20.798 10.459 20.4326C8.13366 18.4582 4.00002 14.4244 4 10.7227C4 8.67453 4.84254 6.70998 6.34277 5.26172C7.84306 3.81344 9.87827 3 12 3ZM12 8.14844C11.2928 8.14844 10.6144 8.41959 10.1143 8.90234C9.61419 9.3851 9.33301 10.04 9.33301 10.7227C9.33301 11.4054 9.61418 12.0602 10.1143 12.543C10.6144 13.0257 11.2928 13.2969 12 13.2969C12.7072 13.2969 13.3856 13.0257 13.8857 12.543C14.3858 12.0602 14.667 11.4054 14.667 10.7227C14.667 10.04 14.3858 9.3851 13.8857 8.90234C13.3856 8.41959 12.7072 8.14844 12 8.14844Z"
+                            fill="#333333" />
+                    </svg>
+                    <span>Москва</span>
                 </button>
                 <a href="https://pro.zamm.ru" class="header__prozamm btn_animated-pro">
                     <div class="btn-frame-1">
@@ -32,18 +34,71 @@
             </div>
             <div class="header__head-right">
                 <div class="header__nav">
-                    <a href="" class="shadow-decoration-hover header__link">Доставка</a>
-                    <a href="" class="shadow-decoration-hover header__link">Шоурумы</a>
-                    <a href="" class="shadow-decoration-hover header__link">О нас</a>
-                    <a href="" class="shadow-decoration-hover header__link">Контакты</a>
+                    <a href="" class="link-yellow header__link">Доставка</a>
+                    <a href="" class="link-yellow header__link">Шоурумы</a>
+                    <a href="" class="link-yellow header__link">О нас</a>
+                    <a href="" class="link-yellow header__link">Контакты</a>
                 </div>
-                <button class="btn-reset header__feedback">
+                <div class="header__feedback">
                     <span class="header__feedback-text">Связаться с нами</span>
                     <img src="/img/arrow-bottom.svg" alt="" class="header__feedback-icon">
                     <div class="header__feedback-menu">
+                        <div class="header__feedback-point">
+                            <div class="header__feedback-point-name">
+                                Мы перезвоним
+                            </div>
+                            <div class="header__feedback-point-body">
+                                <button class="btn-reset link-yellow header__feedback-link header__callback"
+                                    data-modal-open="callback">
+                                    Заказать обратный звонок
+                                </button>
+                            </div>
+                        </div>
+                        <div class="header__feedback-point">
+                            <div class="header__feedback-point-name">
+                                Позвонить
+                            </div>
+                            <div class="header__feedback-point-body">
+                                <a href="tel:+7 (800) 250 87 68"
+                                    class="link-yellow header__feedback-link header__feedback-phone">
+                                    +7 (800) 250 87 68
+                                </a>
+                                <div class="header__feedback-time">пн-пт 09:00-21:00</div>
+
+                            </div>
+                        </div>
+                        <div class="header__feedback-point">
+                            <div class="header__feedback-point-name">
+                                Написать
+                            </div>
+                            <div class="header__feedback-point-body">
+                                <button class="btn-reset link-yellow header__feedback-link header__feedback-email"
+                                    data-modal-open="email">
+                                    Связаться по почте
+                                </button>
+                            </div>
+                        </div>
+                        <div class="header__feedback-point">
+                            <div class="header__feedback-point-name">
+                                Мы в социальных сетях
+                            </div>
+                            <div class="header__feedback-point-body">
+                                <div class="header__socials">
+                                    <a href="" target="_blank" class="header__social">
+                                        <img src="/img/vk.svg" alt="" class="header__social-icon">
+                                    </a>
+                                    <a href="" target="_blank" class="header__social">
+                                        <img src="/img/tg.svg" alt="" class="header__social-icon">
+                                    </a>
+                                    <a href="" target="_blank" class="header__social">
+                                        <img src="/img/rt.svg" alt="" class="header__social-icon">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-                </button>
+                </div>
             </div>
         </div>
         <div class="header__body">
@@ -54,12 +109,13 @@
 
             </div>
             <div class="header__body-center">
-                <a href="" class="link-and-icons shadow-decoration-hover header__actions">
+                <a href="" class="link-and-icons link-yellow header__actions">
                     <img src="/img/percent.svg" alt="" class="header__actions-icon">
                     <span class="header__actions-text">Акции</span>
                 </a>
-                <button class="btn-reset link-and-icons shadow-hover header__catalog">
+                <button class="btn-reset link-and-icons yellow-btn header__catalog js-open-catalog">
                     <img src="/img/tile.svg" alt="" class="header__catalog-icon">
+                    <img src="/img/close.svg" alt="" class="header__catalog-icon">
                     <span class="header__catalog-text">Каталог</span>
                 </button>
                 <label class="search">
@@ -78,17 +134,32 @@
                 </label>
             </div>
             <div class="header__body-right">
-                <a href="" class="link-and-icons shadow-decoration-hover header__profile">
-                    <img src="/img/user.svg" alt="" class="">
+                <a href="" class="link-and-icons link-and-icons-hover-yellow header__profile">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.0001 11.5C14.105 11.5 16.0488 11.9835 17.4932 12.8047C18.9157 13.6134 19.9999 14.8481 20.0001 16.3779V16.4814C20.0014 17.5345 20.0028 18.6435 18.8165 19.6201C18.2312 20.1019 17.4174 20.4393 16.3331 20.6611C15.2458 20.8836 13.8334 21 12.0001 21C10.1667 21 8.75442 20.8836 7.66708 20.6611C6.58296 20.4393 5.76989 20.1017 5.18465 19.6201C3.99783 18.6432 3.9988 17.5338 4.00008 16.4805V16.3779C4.00028 14.8481 5.08449 13.6134 6.50692 12.8047C7.9514 11.9835 9.89518 11.5 12.0001 11.5ZM12.0001 3C14.2092 3 16.0001 4.79086 16.0001 7C16.0001 9.20914 14.2092 11 12.0001 11C9.79094 11 8.00008 9.20914 8.00008 7C8.00009 4.79086 9.79095 3 12.0001 3Z"
+                            fill="#333333" />
+                    </svg>
+
                     <span class="">Вход/Регистрация</span>
                 </a>
-                <a href="" class="link-and-icons shadow-decoration-hover header__favor">
-                    <img src="/img/heart.svg" alt="" class="">
+                <a href="" class="link-and-icons link-and-icons-hover-yellow header__favor">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.19923 3.00002C9.01619 3.00189 9.82446 3.16907 10.5772 3.4922C11.1041 3.71845 11.5967 4.01822 12.041 4.38087C13.126 3.52591 14.4659 3.0575 15.8526 3.06642C17.4851 3.07706 19.0445 3.74806 20.1934 4.92775C21.3416 6.10686 21.9876 7.69948 21.9981 9.35939C22.0084 11.0193 21.3823 12.6204 20.249 13.8145L20.2422 13.8223L14.1143 20.1162C13.5653 20.6798 12.8165 20.9999 12.0322 21C11.2479 21 10.4992 20.6798 9.95021 20.1162L3.82423 13.8252L3.82326 13.8242C3.24619 13.2365 2.7891 12.5382 2.47658 11.7705C2.16389 11.0024 2.0018 10.1792 2.00001 9.34767C1.99824 8.5161 2.1564 7.69147 2.46584 6.92189C2.77528 6.1524 3.23067 5.45186 3.80568 4.86134C4.38063 4.27097 5.06447 3.8022 5.81837 3.48244C6.57261 3.16259 7.38211 2.99818 8.19923 3.00002Z"
+                            fill="#333333" />
+                    </svg>
+
                     <span class="">Избранное</span>
                 </a>
-                <a href="" class="link-and-icons shadow-decoration-hover header__basket">
-                    <span class="header__basket-count">2</span>
-                    <img src="/img/cart.svg" alt="" class="">
+                <a href="" class="link-and-icons link-and-icons-hover-yellow header__basket">
+                    <div class="header__basket-count">2</div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.06644 17.9573C8.8656 17.9576 9.51368 18.6389 9.51371 19.4788C9.51371 20.3187 8.86562 21 8.06644 21.0003C7.26707 21.0003 6.6182 20.3189 6.6182 19.4788C6.61823 18.6387 7.26709 17.9573 8.06644 17.9573ZM15.7852 17.9573C16.5846 17.9573 17.2324 18.6387 17.2325 19.4788C17.2325 20.3189 16.5846 21.0003 15.7852 21.0003C14.9859 21.0001 14.3379 20.3188 14.3379 19.4788C14.338 18.6388 14.9859 17.9574 15.7852 17.9573ZM3.04594 3.49441C3.1858 3.10119 3.60234 2.90149 3.9766 3.04812C5.06353 3.4748 5.9069 3.9173 6.42191 4.70242C6.67953 5.09522 6.83287 5.53895 6.92094 6.03738H17.4932C18.5531 6.03742 19.6785 6.17461 20.375 7.06375C21.0594 7.93753 21.126 9.27869 20.8409 11.0432C20.5506 12.8391 20.0773 14.2497 19.3096 15.219C18.5078 16.2314 17.4439 16.6897 16.168 16.6897H11.4766C10.3071 16.6898 9.34768 16.6903 8.58988 16.5706C7.79018 16.4442 7.11252 16.1708 6.58207 15.5471C6.09914 14.9797 5.84439 14.3808 5.71683 13.552C5.59717 12.7743 5.585 11.7561 5.585 10.3421V7.69168C5.58499 6.48301 5.46844 5.9285 5.23051 5.5657C4.99354 5.20439 4.54474 4.89453 3.47074 4.47293C3.09632 4.32595 2.90608 3.8879 3.04594 3.49441Z"
+                            fill="#333333" />
+                    </svg>
+
                     <span class="">Корзина</span>
                 </a>
             </div>
@@ -107,4 +178,117 @@
             </g>
         </symbol>
     </svg>
+</div>
+<div class="header-catalog">
+    <div class="header-catalog__scroll">
+        <div class="header-catalog__wrapper">
+            <div class="header-catalog__categories">
+                <button class="btn-reset header-catalog__category active" data-category-open="1">
+                    <img src="/img/category/Image.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Столы</span>
+                </button>
+                <button class="btn-reset header-catalog__category" data-category-open="2">
+                    <img src="/img/category/Image-1.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Компьютерные кресла</span>
+                </button>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Image-2.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Стулья</span>
+                </button>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Image-3.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Шкафы и стелажи</span>
+                </button>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Image-4.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Комоды и тумбы</span>
+                </button>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Image-5.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Диваны и кресла</span>
+                </button>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Image-6.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Освещение</span>
+                </button>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Image-7.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Аксессуары и декор </span>
+                </button>
+                <div class="header-catalog__category-separator">
+
+                </div>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Image-8.png" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Комнаты</span>
+                </button>
+                <button class="btn-reset header-catalog__category">
+                    <img src="/img/category/Percent.svg" alt="" class="header-catalog__category-icon">
+                    <span class="header-catalog__category-text">Акции</span>
+                </button>
+            </div>
+            <div class="header-catalog__links-wrapper">
+                <div class="header-catalog__links active" data-category="1">
+                    <a href="" class="header-catalog__links-head link-yellow">Столы</a>
+                    <div class="header-catalog__links-body">
+                        <a href="" class="header-catalog__link link-yellow">
+                            Компьютерные столы
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Столы с регулировкой высоты
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Стол складной
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Журнальные столы
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Столы для учебы / Учебные столы
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Письменные столы
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Круглые столы
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Обеденные столы
+                        </a>
+                        <a href="" class="header-catalog__link-more link-yellow">
+                            Все столы
+                        </a>
+                    </div>
+                </div>
+                <div class="header-catalog__links" data-category="2">
+                    <a href="" class="header-catalog__links-head link-yellow">Компьютерные кресла</a>
+                    <div class="header-catalog__links-body">
+                        <a href="" class="header-catalog__link link-yellow">
+                            Офисные кресла
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Игровые кресла
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Детские кресла
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Кресло
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Кресла без колес
+                        </a>
+                        <a href="" class="header-catalog__link link-yellow">
+                            Кресла с колесами
+                        </a>
+                        <a href="" class="header-catalog__link-more link-yellow">
+                            Все компьютерные кресла
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <img class="header-catalog__banner" src="/img/banner.png" alt="">
+        </div>
+    </div>
 </div>
