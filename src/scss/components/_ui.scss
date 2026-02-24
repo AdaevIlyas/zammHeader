@@ -7,6 +7,11 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+
+  @include middle-desktop {
+    height: 28px;
+    font-size: 0.75rem;
+  }
 }
 
 .btn_animated-pro:hover::before {
@@ -290,7 +295,11 @@
   }
 
   &__input {
-    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
   }
 
   &__mask {
@@ -302,10 +311,21 @@
     border: 1px solid var(--color-border-primary);
 
     transition: all 0.15s ease;
+
+    // &:focus {
+    //   outline: 2px solid var(--color-border-secondary);
+    // }
   }
 
   &__input:checked + &__mask {
     border: 5px solid var(--color-border-accent);
+
+    &:hover {
+      border-color: var(--color-border-accent-hover);
+    }
+  }
+
+  &__input:checked {
   }
 
   &__label {
@@ -439,6 +459,11 @@
   &:hover {
     .ui-checkbox__mask {
       border-color: var(--color-border-accent-hover);
+    }
+
+    .ui-checkbox__input:checked + .ui-checkbox__mask {
+      border-color: var(--color-border-accent-hover);
+      background: var(--color-border-accent-hover);
     }
   }
 

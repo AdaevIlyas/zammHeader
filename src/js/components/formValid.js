@@ -1,3 +1,4 @@
+import { openModal } from "./modal";
 export function formValid() {
   document.addEventListener("DOMContentLoaded", () => {
     const forms = document.querySelectorAll("form");
@@ -65,7 +66,7 @@ export function formValid() {
 
       // ── Чекбоксы с required (.ui-checkbox__input[required]) ──────────────
       const checkboxes = form.querySelectorAll(
-        ".ui-checkbox__input[data-required]"
+        ".ui-checkbox__input[data-required]",
       );
 
       checkboxes.forEach((checkbox) => {
@@ -116,6 +117,9 @@ export function formValid() {
 
         if (hasError) {
           e.preventDefault();
+        } else {
+          e.preventDefault();
+          openModal("thanks");
         }
       });
     });

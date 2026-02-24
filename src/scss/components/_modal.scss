@@ -12,6 +12,16 @@
   height: 100%;
   z-index: 1000;
 
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0.3s;
+
+  &.active {
+    visibility: visible;
+    pointer-events: auto;
+    transition: visibility 0s;
+  }
+
   &__overlay {
     position: absolute;
     top: 0;
@@ -19,6 +29,13 @@
     width: 100%;
     height: 100%;
     background: var(--color-surface-overlay);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .modal.active & {
+      opacity: 1;
+    }
   }
 
   &__inner {
@@ -43,10 +60,22 @@
     border-radius: 16px;
     padding: 36px 32px 32px;
 
-    box-shadow: 0 24px 44px 0 rgba(17, 40, 50, 0.06),
+    box-shadow:
+      0 24px 44px 0 rgba(17, 40, 50, 0.06),
       0 2px 12px 0 rgba(17, 40, 50, 0.04);
 
     background: var(--color-surface-primary);
+
+    opacity: 0;
+    transform: scale(0.7);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+
+    .modal.active & {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   &__close {
@@ -58,6 +87,10 @@
     height: 24px;
 
     transition: all 0.3s ease;
+
+    // &:focus {
+    //   outline: 1px solid var(--color-border-secondary);
+    // }
 
     &:hover {
       opacity: 0.8;
@@ -75,6 +108,10 @@
     font-size: 28px;
     line-height: 121%;
     color: var(--color-text-primary);
+
+    &_center {
+      text-align: center;
+    }
   }
 
   &__client-type {
@@ -105,5 +142,26 @@
   }
 
   &__checkbox {
+  }
+
+  &__email {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-text-disable);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__thanks-text {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--color-text-secondary);
   }
 }

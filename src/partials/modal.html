@@ -1,4 +1,4 @@
-<div class="modal">
+<div class="modal" data-modal="callback">
     <div class="modal__overlay"></div>
 
     <div class="modal__inner">
@@ -63,5 +63,99 @@
             </div>
             <button class="btn-reset yellow-btn modal__submit" type="submit">Отправить</button>
         </form>
+    </div>
+</div>
+
+<div class="modal" data-modal="email">
+    <div class="modal__overlay"></div>
+
+    <div class="modal__inner">
+        <form class="modal__wrapper">
+            <button type="button" class="btn-reset modal__close">
+                <img src="/img/close.svg" alt="" class="modal__close-icon">
+            </button>
+            <div class="modal__title">
+                Связаться по почте
+            </div>
+            <div class="modal__client-type">
+                <label class="ui-radio modal__radio">
+                    <input type="radio" name="client-type" id="client-type-1" checked class="ui-radio__input">
+                    <div class="ui-radio__mask"></div>
+                    <div class="ui-radio__label">
+                        Я физ.лицо
+                    </div>
+                </label>
+                <label class="ui-radio modal__radio">
+                    <input type="radio" name="client-type" id="client-type-2" class="ui-radio__input">
+                    <div class="ui-radio__mask"></div>
+                    <div class="ui-radio__label">
+                        Я юр.лицо
+                    </div>
+                </label>
+            </div>
+            <div class="modal__fields">
+                <label class="ui-input modal__input">
+                    <div class="ui-input__placeholder">Ваше имя*</div>
+                    <input type="text" placeholder="" data-required class="ui-input__field" data-ru-field>
+                </label>
+                <label class="ui-input modal__input">
+                    <div class="ui-input__placeholder">Адрес почты*</div>
+                    <input type="email" placeholder="" data-required class="ui-input__field">
+                </label>
+                <label class="ui-input modal__input">
+                    <div class="ui-input__placeholder">Тема обращения</div>
+                    <input type="text" placeholder="" data-required class="ui-input__field">
+                </label>
+            </div>
+            <div class="modal__email">
+                Или можете связаться с нами по этому адресу <a href="mailto:zakaz@zamm.ru">zakaz@zamm.ru</a>
+            </div>
+            <div class="modal__agrees">
+                <label class="ui-checkbox modal__checkbox">
+                    <input type="checkbox" data-required name="client-agree-1" class="ui-checkbox__input">
+                    <div class="ui-checkbox__mask">
+                        <img src="/img/checkbox-success.svg" alt="" class="ui-checkbox__mask-icon">
+                    </div>
+                    <div class="ui-checkbox__label">
+                        Нажимая на кнопку я даю свое согласие на обработку моих персональных данных и соглашаюсь с
+                        <a class="link-yellow" href="">Политикой конфиденциальности</a>
+                    </div>
+                </label>
+                <label class="ui-checkbox modal__checkbox">
+                    <input type="checkbox" name="client-agree-1" class="ui-checkbox__input">
+                    <div class="ui-checkbox__mask">
+                        <img src="/img/checkbox-success.svg" alt="" class="ui-checkbox__mask-icon">
+                    </div>
+                    <div class="ui-checkbox__label">
+                        Я согласен(на) на получение рекламных и информационных сообщений от ИП Радчук А.Л.
+                        по электронной почте и иным каналам связи
+                    </div>
+                </label>
+            </div>
+            <button class="btn-reset yellow-btn modal__submit" type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal" data-modal="thanks">
+    <div class="modal__overlay"></div>
+
+    <div class="modal__inner">
+        <div class="modal__wrapper">
+            <button type="button" class="btn-reset modal__close">
+                <img src="/img/close.svg" alt="" class="modal__close-icon">
+            </button>
+            <div class="modal__title modal__title_center">
+                Спасибо!
+            </div>
+            <div class="modal__thanks-text">
+                <p>
+                    Ваше сообщение отправлено
+                </p>
+                <p>
+                    В ближайшее время мы свяжемся с Вами
+                </p>
+            </div>
+        </div>
     </div>
 </div>

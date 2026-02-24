@@ -122,11 +122,11 @@ a {
   top: 0;
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   -ms-scroll-chaining: none;
   overscroll-behavior: none;
   overflow-x: hidden;
 
   // тестовое св-во, чтобы не прыгала страница, если прыгает, убираем
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }

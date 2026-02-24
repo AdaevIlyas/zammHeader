@@ -1,21 +1,13 @@
-let distance = 0;
+let scrollPosition = 0;
 
 export function disable_scroll() {
-  document.querySelector(".site-container").classList.add("dis-scroll");
-  document.querySelector(".site-container").scrollTo({
-    top: distance,
-    left: 0
-  });
+  scrollPosition = window.scrollY;
+  document.body.style.top = `-${scrollPosition}px`;
+  document.body.classList.add("dis-scroll");
 }
 
 export function enable_scroll() {
-  document.querySelector(".site-container").classList.remove("dis-scroll");
-  if (distance != 0) {
-    setTimeout(() => {
-      window.scrollTo({
-        top: distance,
-        left: 0
-      });
-    }, 1);
-  }
+  document.body.classList.remove("dis-scroll");
+  document.body.style.top = "";
+  window.scrollTo(0, scrollPosition);
 }
