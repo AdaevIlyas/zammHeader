@@ -25,6 +25,11 @@
     padding-left: 341px;
     padding-right: 80px;
   }
+
+  @include small-desktop {
+    padding-top: 62px;
+    padding-left: 291px;
+  }
 }
 
 .search-inner {

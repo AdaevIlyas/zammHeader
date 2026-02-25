@@ -14,6 +14,10 @@
     padding: 16px 40px;
   }
 
+  @include small-desktop {
+    padding: 16px 24px;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -24,6 +28,14 @@
   &__head {
     display: flex;
     justify-content: space-between;
+
+    @include middle-desktop {
+      gap: 20px;
+    }
+
+    @include small-desktop {
+      gap: 62px;
+    }
   }
 
   &__head-left {
@@ -37,6 +49,10 @@
 
     @include middle-desktop {
       max-width: 439px;
+    }
+
+    @include small-desktop {
+      max-width: 405px;
     }
   }
 
@@ -244,6 +260,10 @@
     align-items: center;
     justify-content: space-between;
     gap: 58px;
+
+    @include small-desktop {
+      gap: 32px;
+    }
   }
 
   &__body-center {
@@ -255,6 +275,10 @@
 
     @include middle-desktop {
       flex: 0 1 662px;
+    }
+
+    @include small-desktop {
+      gap: 16px;
     }
   }
 
@@ -347,6 +371,10 @@
     display: flex;
     align-items: center;
     gap: 24px;
+
+    @include small-desktop {
+      gap: 16px;
+    }
   }
 
   &__profile {
@@ -421,6 +449,11 @@
     width: 100%;
 
     padding: 24px 40px;
+
+    @include small-desktop {
+      padding: 24px;
+      gap: 50px;
+    }
   }
 
   &__banner {
