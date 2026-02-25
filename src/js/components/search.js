@@ -1,7 +1,7 @@
 import { disable_scroll, enable_scroll } from "../functions/scroll";
 
 export function search() {
-  const searchOpen = document.querySelector(".js-search-open");
+  const searchOpens = document.querySelectorAll(".js-search-open");
   const searchBlock = document.querySelector(".js-search-block");
   const searchModal = document.querySelector(".search-modal");
   const searchInput = searchBlock.querySelector("input");
@@ -9,14 +9,18 @@ export function search() {
   const searchOverlay = searchModal.querySelector(".search-overlay");
   const searchClear = searchBlock.querySelector(".search__clear");
 
-  searchOpen.addEventListener("click", () => {
-    searchBlock.classList.add("active");
-    searchModal.classList.add("active");
-    searchMenu.classList.add("active");
-    searchOverlay.classList.add("active");
+  searchOpens.forEach((searchOpen) => {
+    searchOpen.addEventListener("click", () => {
+      searchBlock.classList.add("active");
+      searchModal.classList.add("active");
+      searchMenu.classList.add("active");
+      searchOverlay.classList.add("active");
 
-    disable_scroll();
-    searchInput.focus();
+      if (window.closeBurger) window.closeBurger();
+
+      disable_scroll();
+      searchInput.focus();
+    });
   });
 
   searchOverlay.addEventListener("click", () => {

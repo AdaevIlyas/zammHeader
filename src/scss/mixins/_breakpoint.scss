@@ -18,8 +18,8 @@
   }
 }
 
-@mixin tablet {
-  @media (max-width: (1024px)) {
+@mixin ultrasmall-desktop {
+  @media (max-width: (1220px)) {
     @content;
   }
 }

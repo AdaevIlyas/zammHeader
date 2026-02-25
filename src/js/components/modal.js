@@ -59,3 +59,5 @@ export function closeModal(modal) {
   modal.classList.remove("active");
   enable_scroll();
 }
+
+// openModal("email");

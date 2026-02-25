@@ -4,8 +4,9 @@
 @import "fonts";
 @import "settings";
 @import "calc";
+@import "./components/ui";
 
 @import "./components/header";
-@import "./components/ui";
 @import "./components/modal";
 @import "./components/search";
+@import "./components/burger-btn";

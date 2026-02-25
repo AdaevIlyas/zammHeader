@@ -18,11 +18,22 @@
     padding: 16px 24px;
   }
 
+  @include ultrasmall-desktop {
+    height: 102px;
+
+    padding: 12px 20px;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
     gap: 18px;
     min-height: 90px;
+
+    @include small-desktop {
+      gap: 10px;
+      min-height: 78px;
+    }
   }
 
   &__head {
@@ -52,7 +63,7 @@
     }
 
     @include small-desktop {
-      max-width: 405px;
+      max-width: 395px;
     }
   }
 
@@ -77,6 +88,10 @@
     display: flex;
     align-items: center;
     gap: 24px;
+
+    @include ultrasmall-desktop {
+      display: none;
+    }
   }
 
   &__link {
@@ -94,6 +109,10 @@
     gap: 4px;
 
     cursor: auto;
+
+    @include ultrasmall-desktop {
+      display: none;
+    }
 
     &::before {
       content: "";
@@ -165,6 +184,19 @@
       opacity 0.15s ease,
       visibility 0.15s ease;
 
+    @include ultrasmall-desktop {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+
+      gap: 16px;
+      width: 100%;
+      padding: 0;
+
+      box-shadow: none;
+      background: transparent;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -175,6 +207,10 @@
       height: 24px;
       background: var(--white);
       transform: rotate(45deg);
+
+      @include ultrasmall-desktop {
+        display: none;
+      }
     }
   }
 
@@ -194,6 +230,12 @@
     font-size: 12px;
     line-height: 133%;
     color: var(--color-text-tertiary);
+
+    @include ultrasmall-desktop {
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--color-text-disable);
+    }
   }
 
   &__feedback-link {
@@ -202,6 +244,10 @@
     font-size: 16px;
     line-height: 150%;
     color: var(--color-text-primary);
+
+    @include ultrasmall-desktop {
+      font-size: 14px;
+    }
   }
 
   &__feedback-time {
@@ -216,6 +262,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
+    @include ultrasmall-desktop {
+      padding-top: 4px;
+      gap: 12px;
+    }
   }
 
   &__social {
@@ -223,6 +274,11 @@
     height: 24px;
 
     transition: opacity 0.15s ease;
+
+    @include ultrasmall-desktop {
+      width: 20px;
+      height: 20px;
+    }
 
     &:hover {
       opacity: 0.8;
@@ -239,7 +295,7 @@
   &__prozamm {
     font-family: var(--font-family);
     font-weight: 600;
-    font-size: 16px;
+    // font-size: 16px;
     line-height: 150%;
     color: var(--yellow) !important;
     background: var(--black);
@@ -264,6 +320,10 @@
     @include small-desktop {
       gap: 32px;
     }
+
+    @include ultrasmall-desktop {
+      gap: 76px;
+    }
   }
 
   &__body-center {
@@ -280,12 +340,22 @@
     @include small-desktop {
       gap: 16px;
     }
+
+    @include ultrasmall-desktop {
+      flex: 1 1 auto;
+      gap: 12px;
+    }
   }
 
   &__logo {
     display: block;
     width: 150px;
     height: 28px;
+
+    @include ultrasmall-desktop {
+      width: 108px;
+      height: 20px;
+    }
   }
 
   &__logo-icon {
@@ -298,6 +368,10 @@
   &__actions {
     flex: 0 0 auto;
     color: var(--color-text-primary);
+
+    @include ultrasmall-desktop {
+      display: none;
+    }
 
     &:hover {
       span {
@@ -322,6 +396,13 @@
 
       width: 130px;
       height: 44px;
+    }
+
+    @include ultrasmall-desktop {
+      width: 98px;
+      height: 40px;
+
+      padding: 10px 8px;
     }
 
     &.active {
@@ -364,6 +445,11 @@
     border-radius: 8px;
     border: 1px solid var(--color-border-secondary);
     background: var(--white);
+
+    @include ultrasmall-desktop {
+      height: 40px;
+      padding: 10px 12px;
+    }
   }
 
   &__body-right {
@@ -374,6 +460,10 @@
 
     @include small-desktop {
       gap: 16px;
+    }
+
+    @include ultrasmall-desktop {
+      display: none;
     }
   }
 
@@ -431,6 +521,10 @@
     visibility 0.3s ease,
     opacity 0.3s ease;
 
+  @include ultrasmall-desktop {
+    top: 102px;
+  }
+
   &.active {
     visibility: visible;
     opacity: 1;
@@ -454,6 +548,12 @@
       padding: 24px;
       gap: 50px;
     }
+
+    @include ultrasmall-desktop {
+      grid-template-columns: 230px 1fr;
+      gap: 16px;
+      padding: 24px 20px 25px 20px;
+    }
   }
 
   &__banner {
@@ -466,6 +566,23 @@
     box-shadow:
       0 24px 44px 0 rgba(17, 40, 50, 0.06),
       0 2px 12px 0 rgba(17, 40, 50, 0.04);
+
+    @include ultrasmall-desktop {
+      grid-column: 1 / span 2;
+    }
+
+    &_desktop {
+      // display: block;
+      @media (max-width: 1220px) {
+        display: none;
+      }
+    }
+
+    &_tablet {
+      @media (min-width: 1221px) {
+        display: none;
+      }
+    }
   }
 
   &__categories {
@@ -475,6 +592,10 @@
 
     width: 100%;
     min-width: 0;
+
+    @include ultrasmall-desktop {
+      gap: 12px;
+    }
   }
 
   &__category {
@@ -489,6 +610,13 @@
     padding: 8px 24px 8px 16px;
 
     transition: background 0.15s ease;
+
+    @include ultrasmall-desktop {
+      gap: 8px;
+
+      height: 44px;
+      padding: 6px 16px 6px 12px;
+    }
 
     &:hover {
       background: var(--color-surface-accent-secondary);
@@ -513,6 +641,11 @@
     height: 38px;
     object-fit: contain;
     object-position: center;
+
+    @include ultrasmall-desktop {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &__category-text {
@@ -521,11 +654,19 @@
     font-size: 16px;
     line-height: 138%;
     color: var(--color-text-primary);
+
+    @include ultrasmall-desktop {
+      font-size: 14px;
+    }
   }
 
   &__links-wrapper {
     width: 100%;
     height: 100%;
+
+    @include ultrasmall-desktop {
+      padding-left: 60px;
+    }
   }
 
   &__links {
@@ -539,6 +680,11 @@
     overflow-y: auto;
 
     padding-top: 12px;
+
+    @include ultrasmall-desktop {
+      padding-top: 10px;
+      gap: 38px;
+    }
 
     &.active {
       display: flex;
@@ -573,6 +719,10 @@
     color: var(--color-text-primary);
 
     max-width: fit-content;
+
+    @include ultrasmall-desktop {
+      font-size: 12px;
+    }
   }
 
   &__link-more {
@@ -583,6 +733,10 @@
     color: var(--color-text-accent);
 
     max-width: fit-content;
+
+    @include ultrasmall-desktop {
+      font-size: 12px;
+    }
   }
 }
 
