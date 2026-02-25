@@ -8,6 +8,7 @@ export function search() {
   const searchMenu = searchModal.querySelector(".search-menu");
   const searchOverlay = searchModal.querySelector(".search-overlay");
   const searchClear = searchBlock.querySelector(".search__clear");
+  const searchCancel = document.querySelector(".search__cancel");
 
   searchOpens.forEach((searchOpen) => {
     searchOpen.addEventListener("click", () => {
@@ -24,6 +25,15 @@ export function search() {
   });
 
   searchOverlay.addEventListener("click", () => {
+    searchBlock.classList.remove("active");
+    searchModal.classList.remove("active");
+    searchMenu.classList.remove("active");
+    searchOverlay.classList.remove("active");
+
+    enable_scroll();
+  });
+
+  searchCancel.addEventListener("click", () => {
     searchBlock.classList.remove("active");
     searchModal.classList.remove("active");
     searchMenu.classList.remove("active");

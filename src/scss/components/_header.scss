@@ -18,10 +18,16 @@
     padding: 16px 24px;
   }
 
-  @include ultrasmall-desktop {
+  @include tablet {
     height: 102px;
 
     padding: 12px 20px;
+  }
+
+  @include mobile {
+    height: 94px;
+
+    padding: 12px 15px;
   }
 
   &__wrapper {
@@ -33,6 +39,10 @@
     @include small-desktop {
       gap: 10px;
       min-height: 78px;
+    }
+
+    @include mobile {
+      min-height: 70px;
     }
   }
 
@@ -46,6 +56,10 @@
 
     @include small-desktop {
       gap: 62px;
+    }
+
+    @include mobile {
+      gap: 12px;
     }
   }
 
@@ -65,6 +79,25 @@
     @include small-desktop {
       max-width: 395px;
     }
+
+    @media (min-width: 621px) {
+      .header__logo {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      max-width: 100%;
+      gap: 12px;
+
+      .header__address {
+        margin-right: auto;
+
+        span {
+          display: none;
+        }
+      }
+    }
   }
 
   &__address {
@@ -82,6 +115,11 @@
     @include middle-desktop {
       max-width: 828px;
     }
+
+    @include mobile {
+      max-width: 100%;
+      flex: 0 0 auto;
+    }
   }
 
   &__nav {
@@ -89,7 +127,7 @@
     align-items: center;
     gap: 24px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       display: none;
     }
   }
@@ -110,7 +148,7 @@
 
     cursor: auto;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       display: none;
     }
 
@@ -178,13 +216,13 @@
       0 2px 12px 0 rgba(17, 40, 50, 0.04);
 
     opacity: 0;
-    visibility: hidden;
+    visibility: collapse;
 
     transition:
       opacity 0.15s ease,
       visibility 0.15s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       position: static;
       opacity: 1;
       visibility: visible;
@@ -208,7 +246,7 @@
       background: var(--white);
       transform: rotate(45deg);
 
-      @include ultrasmall-desktop {
+      @include tablet {
         display: none;
       }
     }
@@ -231,7 +269,7 @@
     line-height: 133%;
     color: var(--color-text-tertiary);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-weight: 600;
       font-size: 12px;
       color: var(--color-text-disable);
@@ -245,7 +283,7 @@
     line-height: 150%;
     color: var(--color-text-primary);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
     }
   }
@@ -263,7 +301,7 @@
     align-items: center;
     gap: 8px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       padding-top: 4px;
       gap: 12px;
     }
@@ -275,7 +313,7 @@
 
     transition: opacity 0.15s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       width: 20px;
       height: 20px;
     }
@@ -305,6 +343,10 @@
 
     transition: filter 0.3s ease;
 
+    @include mobile {
+      border-radius: 6px;
+    }
+
     &:hover {
       color: var(--black) !important;
       background: var(--white);
@@ -321,8 +363,14 @@
       gap: 32px;
     }
 
-    @include ultrasmall-desktop {
+    @include tablet {
       gap: 76px;
+    }
+  }
+
+  &__body-left {
+    @include mobile {
+      display: none;
     }
   }
 
@@ -341,7 +389,7 @@
       gap: 16px;
     }
 
-    @include ultrasmall-desktop {
+    @include tablet {
       flex: 1 1 auto;
       gap: 12px;
     }
@@ -352,9 +400,17 @@
     width: 150px;
     height: 28px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       width: 108px;
       height: 20px;
+    }
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 67px;
+      height: 12px;
     }
   }
 
@@ -369,7 +425,7 @@
     flex: 0 0 auto;
     color: var(--color-text-primary);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       display: none;
     }
 
@@ -398,7 +454,7 @@
       height: 44px;
     }
 
-    @include ultrasmall-desktop {
+    @include tablet {
       width: 98px;
       height: 40px;
 
@@ -446,7 +502,7 @@
     border: 1px solid var(--color-border-secondary);
     background: var(--white);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       height: 40px;
       padding: 10px 12px;
     }
@@ -462,7 +518,7 @@
       gap: 16px;
     }
 
-    @include ultrasmall-desktop {
+    @include tablet {
       display: none;
     }
   }
@@ -514,20 +570,23 @@
 
   background: var(--white);
 
-  visibility: hidden;
+  visibility: collapse;
   opacity: 0;
+
+  pointer-events: none;
 
   transition:
     visibility 0.3s ease,
     opacity 0.3s ease;
 
-  @include ultrasmall-desktop {
+  @include tablet {
     top: 102px;
   }
 
   &.active {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
   }
 
   &__scroll {
@@ -549,7 +608,7 @@
       gap: 50px;
     }
 
-    @include ultrasmall-desktop {
+    @include tablet {
       grid-template-columns: 230px 1fr;
       gap: 16px;
       padding: 24px 20px 25px 20px;
@@ -567,7 +626,7 @@
       0 24px 44px 0 rgba(17, 40, 50, 0.06),
       0 2px 12px 0 rgba(17, 40, 50, 0.04);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       grid-column: 1 / span 2;
     }
 
@@ -593,7 +652,7 @@
     width: 100%;
     min-width: 0;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       gap: 12px;
     }
   }
@@ -611,7 +670,7 @@
 
     transition: background 0.15s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       gap: 8px;
 
       height: 44px;
@@ -642,7 +701,7 @@
     object-fit: contain;
     object-position: center;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       width: 32px;
       height: 32px;
     }
@@ -655,7 +714,7 @@
     line-height: 138%;
     color: var(--color-text-primary);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
     }
   }
@@ -664,7 +723,7 @@
     width: 100%;
     height: 100%;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       padding-left: 60px;
     }
   }
@@ -681,7 +740,7 @@
 
     padding-top: 12px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       padding-top: 10px;
       gap: 38px;
     }
@@ -720,7 +779,7 @@
 
     max-width: fit-content;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 12px;
     }
   }
@@ -734,7 +793,7 @@
 
     max-width: fit-content;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 12px;
     }
   }

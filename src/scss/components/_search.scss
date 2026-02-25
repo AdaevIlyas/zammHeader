@@ -31,10 +31,15 @@
     padding-left: 291px;
   }
 
-  @include ultrasmall-desktop {
+  @include tablet {
     padding-top: 50px;
     padding-left: 204px;
     padding-right: 20px;
+  }
+
+  @include mobile {
+    padding: 15px;
+    background: var(--white);
   }
 }
 
@@ -69,6 +74,14 @@
 
   &.active {
     display: block;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    display: none;
   }
 }
 
@@ -86,9 +99,13 @@
   border: 1px solid var(--color-border-secondary);
   background: var(--white);
 
-  @include ultrasmall-desktop {
+  @include tablet {
     padding: 10px 12px;
     height: 40px;
+  }
+
+  @include mobile {
+    margin-right: 81px;
   }
 
   &__input {
@@ -98,8 +115,9 @@
     font-size: 16px;
     line-height: 150%;
     color: var(--color-text-primary);
+    width: 100%;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
     }
   }
@@ -109,7 +127,7 @@
     align-items: center;
     gap: 12px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       gap: 8px;
     }
   }
@@ -119,11 +137,11 @@
     height: 24px;
 
     opacity: 0;
-    visibility: hidden;
+    visibility: collapse;
 
     transition: opacity 0.15s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       width: 20px;
       height: 20px;
     }
@@ -138,9 +156,35 @@
     width: 24px;
     height: 24px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       width: 20px;
       height: 20px;
+    }
+  }
+
+  &__cancel {
+    z-index: 21;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 73px;
+    height: 40px;
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--color-text-primary);
+
+    background: var(--color-surface-accent-secondary);
+
+    @include mobile {
+      display: flex;
     }
   }
 
@@ -182,8 +226,12 @@
 
   z-index: 20;
 
-  @include ultrasmall-desktop {
+  @include tablet {
     padding: 66px 8px 8px 8px;
+  }
+
+  @include mobile {
+    box-shadow: none;
   }
 
   &.active {
@@ -205,7 +253,7 @@
 
     padding-inline: 16px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
 
       padding-inline: 12px;
@@ -232,7 +280,7 @@
 
     max-width: fit-content;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
 
       height: 36px;
@@ -253,7 +301,7 @@
     gap: 16px;
     padding-inline: 8px 16px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       gap: 12px;
       padding-inline: 4px 12px;
     }
@@ -284,7 +332,7 @@
     object-fit: contain;
     object-position: center;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       width: 64px;
       height: 64px;
 
@@ -302,7 +350,7 @@
     color: var(--color-text-tertiary);
     transition: 0.15s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
     }
 
@@ -326,7 +374,7 @@
     padding-left: 16px;
     transition: 0.15s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
       padding-left: 12px;
     }

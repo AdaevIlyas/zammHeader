@@ -12,9 +12,16 @@
   height: 100%;
   z-index: 1000;
 
-  visibility: hidden;
+  visibility: collapse;
   pointer-events: none;
   transition: visibility 0.3s;
+
+  @include mobile {
+    align-items: start;
+    justify-content: start;
+
+    background: var(--white);
+  }
 
   &.active {
     visibility: visible;
@@ -33,6 +40,10 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 
+    @include mobile {
+      display: none;
+    }
+
     .modal.active & {
       opacity: 1;
     }
@@ -46,6 +57,21 @@
     padding: 50px;
 
     scrollbar-width: none;
+
+    @include mobile {
+      padding: 72px 32px 50px 32px;
+      width: 100%;
+      background: var(--white);
+
+      &:has(.modal__wrapper_thanks) {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 72px 32px;
+      }
+    }
   }
 
   &__wrapper {
@@ -72,22 +98,45 @@
       opacity 0.3s ease,
       transform 0.3s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       // width: 100%;
       padding: 24px;
 
       gap: 12px;
     }
 
+    @include mobile {
+      position: static;
+
+      transform: none;
+
+      align-items: center;
+      gap: 18px;
+
+      width: 100%;
+      padding: 0;
+      border-radius: 0;
+
+      box-shadow: none;
+    }
+
     &_thanks {
-      @include ultrasmall-desktop {
+      @include tablet {
         width: 434px;
+      }
+
+      @include mobile {
+        width: auto;
       }
     }
 
     .modal.active & {
       opacity: 1;
       transform: scale(1);
+
+      @include mobile {
+        transform: none;
+      }
     }
   }
 
@@ -101,11 +150,16 @@
 
     transition: all 0.3s ease;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       top: 8px;
       right: 8px;
       width: 20px;
       height: 20px;
+    }
+
+    @include mobile {
+      top: 12px;
+      right: 15px;
     }
 
     // &:focus {
@@ -129,7 +183,7 @@
     line-height: 121%;
     color: var(--color-text-primary);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 20px;
     }
 
@@ -148,6 +202,10 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__submit {
@@ -164,7 +222,7 @@
     flex-direction: column;
     gap: 16px;
 
-    @include ultrasmall-desktop {
+    @include tablet {
       gap: 12px;
     }
   }
@@ -179,7 +237,7 @@
     line-height: 150%;
     color: var(--color-text-disable);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
     }
 
@@ -196,7 +254,7 @@
     text-align: center;
     color: var(--color-text-secondary);
 
-    @include ultrasmall-desktop {
+    @include tablet {
       font-size: 14px;
     }
   }
