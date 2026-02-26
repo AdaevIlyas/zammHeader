@@ -592,6 +592,10 @@
   &__scroll {
     overflow-y: auto;
     height: 100%;
+
+    @include mobile {
+      overflow-x: hidden;
+    }
   }
 
   &__wrapper {
@@ -613,6 +617,13 @@
       gap: 16px;
       padding: 24px 20px 25px 20px;
     }
+
+    @include mobile {
+      position: relative;
+      grid-template-columns: 1fr;
+
+      padding: 10px 15px;
+    }
   }
 
   &__banner {
@@ -630,6 +641,16 @@
       grid-column: 1 / span 2;
     }
 
+    @include mobile {
+      grid-column: auto;
+      border-radius: 8px;
+
+      margin: 24px -9px 12px -9px;
+
+      width: auto;
+      max-width: 100dvh;
+    }
+
     &_desktop {
       // display: block;
       @media (max-width: 1220px) {
@@ -640,6 +661,17 @@
     &_tablet {
       @media (min-width: 1221px) {
         display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &_mobile {
+      display: none;
+      @include mobile {
+        display: block;
       }
     }
   }
@@ -654,6 +686,10 @@
 
     @include tablet {
       gap: 12px;
+    }
+
+    @include mobile {
+      gap: 8px;
     }
   }
 
@@ -683,6 +719,10 @@
 
     &.active {
       background: var(--color-surface-accent-secondary-hover);
+
+      @include mobile {
+        background: transparent;
+      }
     }
   }
 
@@ -726,6 +766,26 @@
     @include tablet {
       padding-left: 60px;
     }
+
+    @include mobile {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      padding-inline: 24px;
+
+      width: auto;
+
+      background: var(--color-surface-primary);
+
+      transform: translateX(100%);
+
+      transition: all 0.3s ease;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
   }
 
   &__links {
@@ -745,9 +805,19 @@
       gap: 38px;
     }
 
+    @include mobile {
+      padding-top: 18px;
+      gap: 24px;
+    }
+
     &.active {
       display: flex;
       animation: fadeIn 0.3s ease forwards;
+
+      @include mobile {
+        display: flex;
+        animation: none;
+      }
     }
   }
 
@@ -762,12 +832,20 @@
     text-underline-offset: 4px;
 
     max-width: fit-content;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__links-body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include mobile {
+      gap: 20px;
+    }
   }
 
   &__link {
@@ -796,6 +874,22 @@
     @include tablet {
       font-size: 12px;
     }
+  }
+
+  &__sublinks-back {
+    width: 20px;
+    height: 20px;
+
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__sublink-back-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 

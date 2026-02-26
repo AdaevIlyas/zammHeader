@@ -226,6 +226,10 @@
     @include tablet {
       font-size: 14px;
     }
+
+    @include mobile {
+      line-height: 140%;
+    }
   }
 }
 
