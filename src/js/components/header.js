@@ -23,6 +23,10 @@ export function category() {
   const events = ["click", "mouseenter"];
 
   events.forEach((event) => {
+    if (document.body.clientWidth <= 620 && event === "mouseenter") {
+      return;
+    }
+
     categoryBtn.forEach((item) => {
       item.addEventListener(event, () => {
         clearActives();
