@@ -273,7 +273,7 @@
 
 .yellow-btn {
   background: var(--color-surface-accent);
-  transition: all 0.15s ease;
+  transition: background 0.15s ease;
 
   &:hover {
     background: var(--color-surface-accent-hover);
