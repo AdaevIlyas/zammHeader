@@ -4,7 +4,7 @@ import { formValid } from "./components/formValid";
 import { modal } from "./components/modal";
 import { search } from "./components/search";
 import { burger } from "./components/burger";
-import { legalCalc } from "./components/legalCalc";
+import { legalCalc, searchCalc } from "./components/calc";
 
 category();
 openCatalog();
@@ -13,3 +13,4 @@ modal();
 search();
 burger();
 legalCalc();
+searchCalc();
